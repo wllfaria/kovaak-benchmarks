@@ -1,0 +1,22 @@
+{
+	"env": {
+		"browser": true,
+		"es2021": true,
+		"node": true
+	},
+	"extends": ["plugin:react/recommended", "plugin:react-hooks/recommended", "standard-with-typescript", "prettier"],
+	"settings": {
+		"react": { "version": "detect" }
+	},
+	"overrides": [],
+	"parserOptions": {
+		"ecmaVersion": "latest",
+		"project": ["./tsconfig.json"],
+		"sourceType": "module"
+	},
+	"plugins": ["react", "prettier"],
+	"rules": {
+		"prettier/prettier": "error",
+		"react/react-in-jsx-scope": "off"
+	}
+}
