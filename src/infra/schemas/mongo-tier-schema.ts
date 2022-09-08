@@ -1,5 +1,5 @@
 import { Schema } from 'mongoose'
-import { ITier } from '../../domain/entities/tier'
+import { ITier } from '../../domain/contracts/tier'
 
 export const MongoTierSchema = new Schema<ITier>(
 	{
