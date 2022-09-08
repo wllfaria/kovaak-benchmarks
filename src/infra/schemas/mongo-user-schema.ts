@@ -5,7 +5,7 @@ export const MongoUserSchema = new Schema<IUser>(
 	{
 		username: { type: 'string', required: true },
 		password: { type: 'string', required: true },
-		email: { type: 'string', required: true },
+		email: { type: 'string', required: true, unique: true },
 	},
 	{ timestamps: true }
 )
