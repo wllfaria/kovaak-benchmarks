@@ -15,7 +15,6 @@ export class RegisterUseCase {
 	public async register(registerDto: RegisterDto): Promise<string> {
 		this.validator.handle(registerDto)
 		const hashedPassword = await this.crypto.hash(registerDto.password)
-		console.log(hashedPassword)
 		registerDto.password = hashedPassword
 		const user = await this.userRepository.insert(registerDto)
 		const token = this.token.sign(user._id)
