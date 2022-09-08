@@ -7,6 +7,9 @@
     "dev": "next dev"
   },
   "dependencies": {
+    "@types/jsonwebtoken": "^8.5.9",
+    "argon2": "^0.29.1",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.5.4",
     "next": "^12.2.5",
     "react": "^18.2.0",
