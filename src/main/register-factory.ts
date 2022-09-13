@@ -19,7 +19,7 @@ import {
 } from '../validations'
 
 export class RegisterFactory {
-	public static make(): { registerController: Controller<RegisterDto, string> } {
+	public static make(): { registerController: Controller<RegisterDto, { token: string }> } {
 		const validator = RegisterFactory.makeValidator()
 		const model = RegisterFactory.makeModel()
 		const repository = RegisterFactory.makeRepository(model)
@@ -33,7 +33,7 @@ export class RegisterFactory {
 	private static makeRegisterController(
 		validator: ChainHandler<RegisterDto>,
 		useCase: RegisterUseCase
-	): Controller<RegisterDto, string> {
+	): Controller<RegisterDto, { token: string }> {
 		return new RegisterController(validator, useCase)
 	}
 

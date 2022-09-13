@@ -16,8 +16,8 @@ export class MongoUserRepository implements UserRepository {
 	}
 
 	private async verifyIfUserExists({ email, username }: RegisterDto): Promise<void> {
-		const userWithSameUsername = await this.findOneByEmail(email)
-		const userWithSameEmail = await this.findOneByUsername(username)
+		const userWithSameUsername = await this.findOneByUsername(username)
+		const userWithSameEmail = await this.findOneByEmail(email)
 		if (userWithSameUsername !== null) throw new InvalidParamError('user with provided username already exists')
 		if (userWithSameEmail !== null) throw new InvalidParamError('user with provided email already exists')
 	}
